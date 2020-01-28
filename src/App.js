@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
 
-import './App.css';
+import './App.css'
+import ExchangePage from './page/ExchangePage'
 
 function App() {
   return (
     <div className="App">
-      Welcome to the app!
+      <ExchangePage />
     </div>
   );
 }
