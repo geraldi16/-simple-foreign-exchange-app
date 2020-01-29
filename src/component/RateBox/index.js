@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { CURRENCY_NAME } from "../../utils/currency-name";
 import { removeShowedList } from "../../actions/exchange";
 import Style from "./style";
-import { Col, Row } from "react-flexbox-grid";
+import { Col } from "react-flexbox-grid";
 
 class RateBox extends React.PureComponent {
   /**

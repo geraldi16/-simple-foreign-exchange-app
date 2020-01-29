@@ -5,7 +5,7 @@ const initialState = {
   base: "",
   showedRates: [], // to store which currency is displayed in the page
   notShowedRates: [], // to store which currency is not displayed yet
-  amount: 0
+  amount: "10.000"
 };
 
 /**

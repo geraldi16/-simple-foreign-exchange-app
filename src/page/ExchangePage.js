@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import ExchangeRate from "../component/ExchangeRate";
 import InputAmount from "../component/InputAmount";
-import RateBox from "../component/RateBox";
 import { getLatestList } from "../actions/exchange";
 
 class ExchangePage extends React.PureComponent {
@@ -23,17 +23,11 @@ class ExchangePage extends React.PureComponent {
     const { showedRates, exchangeRates } = this.props;
     return (
       <div style={{ width: 500, padding: "0 20px" }}>
+        {/* Input Section */}
         <InputAmount />
-        {showedRates.map(currency => {
-          const currencyRateValue = exchangeRates[currency];
-          return (
-            <RateBox
-              currencyRateValue={currencyRateValue}
-              currency={currency}
-            />
-          );
-        })}
 
+        {/* Show Exchange Rate Section */}
+        <ExchangeRate />
         <div>- add new currency here -</div>
       </div>
     );
