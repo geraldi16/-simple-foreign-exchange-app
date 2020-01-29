@@ -41,9 +41,16 @@ class AddRate extends React.PureComponent {
       <Style.Wrapper>
         {/* Input Section */}
         <Col xs={9}>
-          <Style.Input
-            onChange={this.handleChange}
-            value={this.state.currencyInput}
+          <Style.Autocomplete
+            options={this.props.notShowedRates}
+            freeSolo
+            renderInput={params => (
+              <Style.Input
+                {...params}
+                onChange={this.handleChange}
+                onSelect={this.handleChange}
+              />
+            )}
           />
         </Col>
         {/* Submit Button Section */}
