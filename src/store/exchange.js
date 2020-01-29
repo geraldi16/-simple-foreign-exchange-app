@@ -51,7 +51,7 @@ export default function reducers(state = initialState, action) {
 
       // define exchange rate that left off the display.
       const notShowedRates = state.notShowedRates.filter(
-        (_, rate) => rate !== action.payload
+        rate => rate !== action.payload
       );
       return {
         ...state,
@@ -67,12 +67,13 @@ export default function reducers(state = initialState, action) {
      */
     case EXCHANGE_TYPE.REMOVE_SHOW_LIST: {
       const showedRates = state.showedRates.filter(
-        (_, rate) => rate !== action.payload
+        rate => rate !== action.payload
       );
 
       // update exchange rate that left off the display.
       const notShowedRates = [...state.notShowedRates];
       notShowedRates.push(action.payload);
+
       return {
         ...state,
         showedRates,

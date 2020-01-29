@@ -26,6 +26,7 @@ const Style = {
   Input: styled.input`
     border: none;
     font-size: 18px;
+    font-weight: bold;
     padding: 0 5px;
     text-align: right;
     &:focus {
