@@ -4,14 +4,40 @@ import { connect } from "react-redux";
 import { getLatestList } from "../actions/exchange";
 
 class ExchangePage extends React.PureComponent {
+  state = {
+    amount: "10.0000"
+  };
+
+  changeAmount = e => this.setState({ amount: e.target.value });
+
+  /**
+   * Fetch latest rates from api after first time rendering.
+   */
   componentDidMount() {
-    //
     this.props.getLatestList();
   }
 
   render() {
-    console.log(this.props);
-    return <div>Hello World!</div>;
+    const { base, showedRates, exchangeRates } = this.props;
+    return (
+      <div>
+        <div>
+          {base}
+          <input value={this.state.amount} onChange={this.changeAmount} />
+        </div>
+        {showedRates.map(currency => {
+          const rate = exchangeRates[currency];
+          return (
+            <div>
+              {currency} - {(this.state.amount * rate).toFixed(4)}1 {base} ={" "}
+              {currency} {rate}
+            </div>
+          );
+        })}
+
+        <div>- add new currency here -</div>
+      </div>
+    );
   }
 }
 
