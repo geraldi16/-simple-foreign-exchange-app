@@ -4,7 +4,8 @@ const initialState = {
   exchangeRates: {},
   base: "",
   showedRates: [], // to store which currency is displayed in the page
-  notShowedRates: [] // to store which currency is not displayed yet
+  notShowedRates: [], // to store which currency is not displayed yet
+  amount: 0
 };
 
 /**
@@ -23,7 +24,7 @@ export default function reducers(state = initialState, action) {
      *
      * @description
      * Also set top 5 currencies to be shown in the page.
-     *
+     * action.payload is return value from api
      */
     case EXCHANGE_TYPE.GET_LIST: {
       const exchangeRates = Object.keys(action.payload.rates);
@@ -41,6 +42,8 @@ export default function reducers(state = initialState, action) {
 
     /**
      * Add designated exchange rate into display.
+     *
+     * action.payload contain currency
      */
     case EXCHANGE_TYPE.ADD_SHOW_LIST: {
       const showedRates = [...state.showedRates];
@@ -59,6 +62,8 @@ export default function reducers(state = initialState, action) {
 
     /**
      * Remove designated rate from display.
+     *
+     * action.payload contain currency
      */
     case EXCHANGE_TYPE.REMOVE_SHOW_LIST: {
       const showedRates = state.showedRates.filter(
@@ -74,6 +79,18 @@ export default function reducers(state = initialState, action) {
         notShowedRates
       };
     }
+
+    /**
+     * Update amount value from user.
+     *
+     * @description
+     * Action payload object is contain string input from user.
+     */
+    case EXCHANGE_TYPE.CHANGE_AMOUNT:
+      return {
+        ...state,
+        amount: action.payload
+      };
 
     /**
      * Default handling if no action.type matches.

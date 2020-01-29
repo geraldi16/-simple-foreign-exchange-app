@@ -1,3 +1,4 @@
+// define currency name
 export const CURRENCY_NAME = {
   USD: "US Dollar",
   JPY: "Japanese Yen",
