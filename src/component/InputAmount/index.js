@@ -19,6 +19,7 @@ class InputAmount extends React.PureComponent {
             value={amount}
             onChange={this.changeAmount}
             id="amount-input"
+            autoFocus
           />
         </Style.InputWrapper>
       </Style.Wrapper>
