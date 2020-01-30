@@ -1,5 +1,6 @@
 import React from "react";
 import { Col } from "react-flexbox-grid";
+import { FaPlusCircle } from "react-icons/fa";
 import { connect } from "react-redux";
 
 import Style from "./style";
@@ -25,6 +26,10 @@ class AddRate extends React.PureComponent {
    */
   addRate = () => {
     const { notShowedRates } = this.props;
+    const { currencyInput } = this.state;
+
+    if (currencyInput === "") return;
+
     const input = this.state.currencyInput.toUpperCase();
     // check if input is available in notShowedRates array
     if (notShowedRates.includes(input)) {
@@ -58,7 +63,7 @@ class AddRate extends React.PureComponent {
         {/* Submit Button Section */}
         <Col xs={3} style={{ padding: 0 }}>
           <Style.Submit onClick={this.addRate} id="add-submit">
-            Add
+            <FaPlusCircle /> Add
           </Style.Submit>
         </Col>
       </Style.Wrapper>

@@ -8,13 +8,19 @@ const Style = {
     border: 1px solid #949494;
     border-radius: 3px;
     box-shadow: 1px 1px 3px #333333;
+    background: #fff;
+    width: 300px;
+    height: 50px;
+    margin: auto;
   `,
   Autocomplete: styled(Autocomplete)`
     width: 100%;
+    height: 100%;
     padding: 0 5px;
   `,
   Input: styled(TextField)`
     text-align: left;
+    height: 100%;
     font-size: 14px;
     width: 100%;
     border: none;
