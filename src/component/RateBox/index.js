@@ -43,7 +43,7 @@ class RateBox extends React.PureComponent {
             onClick={this.removeMe}
             id={`remove-btn-${currency}`}
           >
-            -
+            ( x )
           </Style.RemoveButton>
         </Col>
       </Style.Wrapper>

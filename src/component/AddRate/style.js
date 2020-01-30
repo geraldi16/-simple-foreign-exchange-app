@@ -15,7 +15,7 @@ const Style = {
   `,
   Input: styled(TextField)`
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
     width: 100%;
     border: none;
     padding: 10px;
@@ -28,7 +28,8 @@ const Style = {
     height: 100%;
     background: #f1f1f1;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: bold;
 
     &:hover {
       cursor: pointer;
