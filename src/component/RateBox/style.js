@@ -8,6 +8,7 @@ const Style = {
     border-radius: 3px;
     margin: 20px;
     box-shadow: 1px 1px 3px #333333;
+    background: #fff;
   `,
   Information: styled(Row)`
     padding: 10px;

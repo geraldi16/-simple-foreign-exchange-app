@@ -46,8 +46,8 @@ test("Adding new currency state to the page", async () => {
   const elementNotExist = await page.$("#remove-btn-IDR");
   expect(elementNotExist).toBeNull();
 
-  await page.click("div.rate-input");
-  await page.type("div.rate-input", "idr");
+  await page.click("input#rate-input");
+  await page.type("input#rate-input", "idr");
   await page.click("button#add-submit");
 
   const elementExist = await page.$("#remove-btn-IDR");

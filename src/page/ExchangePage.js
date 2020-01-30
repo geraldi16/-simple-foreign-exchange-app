@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import AddRate from "../component/AddRate";
 import ExchangeRate from "../component/ExchangeRate";
 import InputAmount from "../component/InputAmount";
+import Style from "./style";
 import { getLatestList } from "../actions/exchange";
 
 class ExchangePage extends React.PureComponent {
@@ -22,16 +23,19 @@ class ExchangePage extends React.PureComponent {
 
   render() {
     return (
-      <div style={{ width: 500, padding: "0 20px" }}>
-        {/* Input Section */}
-        <InputAmount />
+      <React.Fragment>
+        <Style.Background />
+        <Style.Wrapper>
+          {/* Input Section */}
+          <InputAmount />
 
-        {/* Show Exchange Rate Section */}
-        <ExchangeRate />
+          {/* Show Exchange Rate Section */}
+          <ExchangeRate />
 
-        {/* Menu for add new rate */}
-        <AddRate />
-      </div>
+          {/* Menu for add new rate */}
+          <AddRate />
+        </Style.Wrapper>
+      </React.Fragment>
     );
   }
 }

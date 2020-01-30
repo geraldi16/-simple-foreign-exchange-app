@@ -1,4 +1,5 @@
 import React from "react";
+import { FaMinusCircle } from "react-icons/fa";
 import { connect } from "react-redux";
 
 import { CURRENCY_NAME } from "../../utils/currency-name";
@@ -43,7 +44,7 @@ class RateBox extends React.PureComponent {
             onClick={this.removeMe}
             id={`remove-btn-${currency}`}
           >
-            ( x )
+            <FaMinusCircle />
           </Style.RemoveButton>
         </Col>
       </Style.Wrapper>
