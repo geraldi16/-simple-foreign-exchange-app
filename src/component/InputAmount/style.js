@@ -1,13 +1,21 @@
 import styled from "styled-components";
 import { Col, Row } from "react-flexbox-grid";
 
+import { media } from "../../utils/dimension";
+
 const Style = {
   Wrapper: styled(Row)`
-    margin-bottom: 20px;
-    padding: 10px 10px 0 10px;
     background: #f1f1f1;
     height: 100px;
-    border-radius: 5px;
+    width: 103%;
+    position: fixed;
+    top: 0;
+    padding: 10px 10px 0 10px;
+    ${media.tablet`
+      position: relative;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    `}
   `,
   CurrencyName: styled(Col)`
     text-align: left;
@@ -24,6 +32,7 @@ const Style = {
   InputWrapper: styled(Col)`
     padding: 10px;
     text-align: right;
+    width: 100%;
   `,
   Input: styled.input`
     border: none;
@@ -32,6 +41,7 @@ const Style = {
     font-weight: bold;
     padding: 0 5px;
     text-align: right;
+    width: 100%;
     &:focus {
       outline: none;
     }
