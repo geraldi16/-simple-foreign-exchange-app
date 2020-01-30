@@ -36,7 +36,7 @@ const Style = {
     height: 100%;
     background: #f1f1f1;
     border: none;
-    font-size: 26px;
+    font-size: 18px;
 
     &:hover {
       cursor: pointer;
