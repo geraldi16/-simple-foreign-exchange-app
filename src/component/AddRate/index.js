@@ -44,18 +44,22 @@ class AddRate extends React.PureComponent {
           <Style.Autocomplete
             options={this.props.notShowedRates}
             freeSolo
+            id="rate-input"
             renderInput={params => (
               <Style.Input
                 {...params}
                 onChange={this.handleChange}
                 onSelect={this.handleChange}
+                placeholder="Please input currency"
               />
             )}
           />
         </Col>
         {/* Submit Button Section */}
         <Col xs={3} style={{ padding: 0 }}>
-          <Style.Submit onClick={this.addRate}>Add Rate</Style.Submit>
+          <Style.Submit onClick={this.addRate} id="add-submit">
+            Add
+          </Style.Submit>
         </Col>
       </Style.Wrapper>
     );

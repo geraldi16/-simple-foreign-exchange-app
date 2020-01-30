@@ -46,7 +46,6 @@ export default function reducers(state = initialState, action) {
      * action.payload contain currency
      */
     case EXCHANGE_TYPE.ADD_SHOW_LIST: {
-      console.log(state.showedRates);
       const showedRates = [...state.showedRates];
       showedRates.push(action.payload);
 
@@ -54,7 +53,7 @@ export default function reducers(state = initialState, action) {
       const notShowedRates = state.notShowedRates.filter(
         rate => rate !== action.payload
       );
-      console.log(showedRates, notShowedRates);
+
       return {
         ...state,
         showedRates,
