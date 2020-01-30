@@ -15,7 +15,11 @@ class InputAmount extends React.PureComponent {
         <Style.CurrencyName xs={12}>{CURRENCY_NAME[base]}</Style.CurrencyName>
         <Style.Currency xs={6}>{base}</Style.Currency>
         <Style.InputWrapper xs={6}>
-          <Style.Input value={amount} onChange={this.changeAmount} />
+          <Style.Input
+            value={amount}
+            onChange={this.changeAmount}
+            id="amount-input"
+          />
         </Style.InputWrapper>
       </Style.Wrapper>
     );

@@ -39,7 +39,12 @@ class RateBox extends React.PureComponent {
         </Col>
         {/* Delete Button Section */}
         <Col xs={2} style={{ padding: 0 }}>
-          <Style.RemoveButton onClick={this.removeMe}>-</Style.RemoveButton>
+          <Style.RemoveButton
+            onClick={this.removeMe}
+            id={`remove-btn-${currency}`}
+          >
+            -
+          </Style.RemoveButton>
         </Col>
       </Style.Wrapper>
     );

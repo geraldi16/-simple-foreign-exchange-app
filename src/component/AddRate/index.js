@@ -49,13 +49,16 @@ class AddRate extends React.PureComponent {
                 {...params}
                 onChange={this.handleChange}
                 onSelect={this.handleChange}
+                className="rate-input"
               />
             )}
           />
         </Col>
         {/* Submit Button Section */}
         <Col xs={3} style={{ padding: 0 }}>
-          <Style.Submit onClick={this.addRate}>Add Rate</Style.Submit>
+          <Style.Submit onClick={this.addRate} id="add-submit">
+            Add Rate
+          </Style.Submit>
         </Col>
       </Style.Wrapper>
     );
