@@ -14,7 +14,7 @@ test("Changing amount value", async () => {
   await page.goto("https://simple-exchange-rate.herokuapp.com/");
 
   expect(1).toBe(1);
-});
+}, 20000);
 
 /**
  * This test will be about user add new currency rate
