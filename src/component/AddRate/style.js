@@ -1,7 +1,7 @@
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import TextField from "@material-ui/core/TextField";
 import styled from "styled-components";
 import { Row } from "react-flexbox-grid";
+
+import { media } from "../../utils/dimension";
 
 const Style = {
   Wrapper: styled(Row)`
@@ -13,18 +13,15 @@ const Style = {
     height: 50px;
     margin: auto;
   `,
-  Autocomplete: styled(Autocomplete)`
-    width: 100%;
-    height: 100%;
-    padding: 0 5px;
-  `,
-  Input: styled(TextField)`
+  Input: styled.input`
     text-align: left;
-    height: 100%;
-    font-size: 14px;
+    height: 95%;
+    font-size: 12px;
+    ${media.tablet`
+      font-size: 14px;
+    `}
     width: 100%;
     border: none;
-    padding: 10px;
     &:focus {
       outline: none;
     }
