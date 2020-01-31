@@ -12,6 +12,24 @@ class InputAmount extends React.PureComponent {
       selected: "USD"
     };
   }
+
+  /**
+   * Make sure if user input will not change the value.
+   *
+   * @description
+   * Specifically handle if user type '.' in the end of string, if not properly handled,
+   * '.' char will not appear.
+   */
+  showAmountValue = () => {
+    const { amount } = this.props;
+
+    if (amount.charAt(amount.length - 1) === ".") {
+      return Number(amount).toLocaleString() + ".";
+    }
+
+    return Number(amount).toLocaleString();
+  };
+
   /**
    * Update input text amount.
    */
@@ -36,7 +54,7 @@ class InputAmount extends React.PureComponent {
   };
 
   render() {
-    const { amount, base, currencyList } = this.props;
+    const { base, currencyList } = this.props;
     return (
       <Style.Wrapper>
         <Style.CurrencyName xs={12}>{CURRENCY_NAME[base]}</Style.CurrencyName>
@@ -61,9 +79,10 @@ class InputAmount extends React.PureComponent {
         </Style.Currency>
         <Style.InputWrapper xs={6}>
           <Style.Input
-            value={amount}
+            value={this.showAmountValue()}
             onChange={this.changeAmount}
             id="amount-input"
+            maxLength="13"
             autoFocus
           />
         </Style.InputWrapper>

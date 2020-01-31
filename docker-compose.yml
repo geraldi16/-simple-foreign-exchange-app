@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: simple-foreign-exchange-app
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - '80:80'
+    restart: on-failure
