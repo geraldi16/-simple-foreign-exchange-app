@@ -45,6 +45,10 @@ const Style = {
     &:focus {
       outline: none;
     }
+  `,
+  Select: styled.select`
+    font-size: 24px;
+    font-weight: bold;
   `
 };
 

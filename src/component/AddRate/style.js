@@ -3,6 +3,8 @@ import TextField from "@material-ui/core/TextField";
 import styled from "styled-components";
 import { Row } from "react-flexbox-grid";
 
+import { media } from "../../utils/dimension";
+
 const Style = {
   Wrapper: styled(Row)`
     border: 1px solid #949494;
@@ -21,7 +23,10 @@ const Style = {
   Input: styled(TextField)`
     text-align: left;
     height: 100%;
-    font-size: 14px;
+    font-size: 12px;
+    ${media.tablet`
+      font-size: 14px;
+    `}
     width: 100%;
     border: none;
     padding: 10px;
