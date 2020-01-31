@@ -21,10 +21,18 @@ class InputAmount extends React.PureComponent {
    * Change currency and update store exchange values.
    */
   changeCurrency = e => {
-    const selectedValue = e.target.value;
+    const selectedValue = e.target.value.toUpperCase();
+    const { currencyList } = this.props;
 
     // call api to fetch new data
-    return this.props.getLatestList(selectedValue);
+    if (currencyList.includes(selectedValue)) {
+      this.props.getLatestList(selectedValue);
+    }
+
+    // update selected state
+    this.setState({
+      selected: selectedValue
+    });
   };
 
   render() {
@@ -33,18 +41,23 @@ class InputAmount extends React.PureComponent {
       <Style.Wrapper>
         <Style.CurrencyName xs={12}>{CURRENCY_NAME[base]}</Style.CurrencyName>
         <Style.Currency xs={6}>
-          <Style.Select onChange={this.changeCurrency}>
-            <optgroup style={{ fontSize: 12 }}>
-              {currencyList.map(currency => (
-                <option
-                  value={currency}
-                  selected={this.state.selected === currency}
-                >
-                  {currency}
-                </option>
-              ))}
-            </optgroup>
-          </Style.Select>
+          <Style.InputCurrency
+            type="text"
+            value={this.state.selected}
+            list="currencies"
+            onChange={this.changeCurrency}
+            maxLength="3"
+          />
+          <datalist id="currencies">
+            {currencyList.map(currency => (
+              <option
+                value={currency}
+                selected={this.state.selected === currency}
+              >
+                {currency}
+              </option>
+            ))}
+          </datalist>
         </Style.Currency>
         <Style.InputWrapper xs={6}>
           <Style.Input

@@ -46,9 +46,12 @@ const Style = {
       outline: none;
     }
   `,
-  Select: styled.select`
+  InputCurrency: styled.input`
     font-size: 24px;
     font-weight: bold;
+    border: none;
+    height: 40px;
+    width: 100px;
   `
 };
 
