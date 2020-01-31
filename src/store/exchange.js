@@ -5,7 +5,8 @@ const initialState = {
   base: "",
   showedRates: [], // to store which currency is displayed in the page
   notShowedRates: [], // to store which currency is not displayed yet
-  amount: "10.000"
+  amount: "10.000",
+  currencyList: []
 };
 
 /**
@@ -28,6 +29,7 @@ export default function reducers(state = initialState, action) {
      */
     case EXCHANGE_TYPE.GET_LIST: {
       const exchangeRates = Object.keys(action.payload.rates);
+      const currencyList = [...exchangeRates];
 
       const showedRates = exchangeRates.splice(0, 5);
       const notShowedRates = exchangeRates;
@@ -35,6 +37,7 @@ export default function reducers(state = initialState, action) {
         ...state,
         exchangeRates: action.payload.rates,
         base: action.payload.base,
+        currencyList,
         showedRates,
         notShowedRates
       };

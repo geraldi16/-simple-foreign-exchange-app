@@ -42,23 +42,24 @@ class AddRate extends React.PureComponent {
   };
 
   render() {
+    const { notShowedRates } = this.props;
+
     return (
       <Style.Wrapper>
         {/* Input Section */}
         <Col xs={9}>
-          <Style.Autocomplete
-            options={this.props.notShowedRates}
-            freeSolo
-            id="rate-input"
-            renderInput={params => (
-              <Style.Input
-                {...params}
-                onChange={this.handleChange}
-                onSelect={this.handleChange}
-                placeholder="Please input currency"
-              />
-            )}
+          <Style.Input
+            type="text"
+            placeholder="Please input currency"
+            list="currencies"
+            onChange={this.handleChange}
+            value={this.state.currencyInput}
           />
+          <datalist id="currencies">
+            {notShowedRates.map(rate => (
+              <option>{rate}</option>
+            ))}
+          </datalist>
         </Col>
         {/* Submit Button Section */}
         <Col xs={3} style={{ padding: 0 }}>

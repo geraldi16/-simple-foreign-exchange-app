@@ -10,7 +10,8 @@ describe("Exchange actions", () => {
         base: "",
         exchangeRates: {},
         notShowedRates: [],
-        showedRates: []
+        showedRates: [],
+        currencyList: []
       }
     };
 
@@ -91,6 +92,41 @@ describe("Exchange actions", () => {
           "ILS",
           "KRW",
           "PLN"
+        ],
+        currencyList: [
+          "CAD",
+          "HKD",
+          "ISK",
+          "PHP",
+          "DKK",
+          "HUF",
+          "CZK",
+          "GBP",
+          "RON",
+          "SEK",
+          "IDR",
+          "INR",
+          "BRL",
+          "RUB",
+          "HRK",
+          "JPY",
+          "THB",
+          "CHF",
+          "EUR",
+          "MYR",
+          "BGN",
+          "TRY",
+          "CNY",
+          "NOK",
+          "NZD",
+          "ZAR",
+          "USD",
+          "MXN",
+          "SGD",
+          "AUD",
+          "ILS",
+          "KRW",
+          "PLN"
         ]
       }
     };
@@ -113,7 +149,8 @@ describe("Exchange actions", () => {
         base: "",
         exchangeRates: {},
         notShowedRates: [],
-        showedRates: ["it worked!"]
+        showedRates: ["it worked!"],
+        currencyList: []
       }
     };
 
@@ -124,7 +161,8 @@ describe("Exchange actions", () => {
         base: "",
         exchangeRates: {},
         notShowedRates: ["it worked!"],
-        showedRates: []
+        showedRates: [],
+        currencyList: []
       }
     });
 
@@ -142,7 +180,8 @@ describe("Exchange actions", () => {
         base: "",
         exchangeRates: {},
         notShowedRates: ["it worked!"],
-        showedRates: []
+        showedRates: [],
+        currencyList: []
       }
     };
 
@@ -153,7 +192,8 @@ describe("Exchange actions", () => {
         base: "",
         exchangeRates: {},
         notShowedRates: [],
-        showedRates: ["it worked!"]
+        showedRates: ["it worked!"],
+        currencyList: []
       }
     });
 
