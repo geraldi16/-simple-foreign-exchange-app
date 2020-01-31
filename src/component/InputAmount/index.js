@@ -22,9 +22,11 @@ class InputAmount extends React.PureComponent {
    */
   showAmountValue = () => {
     const { amount } = this.props;
-
+    console.log(amount);
     if (amount.charAt(amount.length - 1) === ".") {
-      return Number(amount).toLocaleString() + ".";
+      return (
+        Number(amount.substring(0, amount.length - 1)).toLocaleString() + "."
+      );
     }
 
     return Number(amount).toLocaleString();

@@ -20,7 +20,7 @@ test("Changing amount value", async () => {
 
   const text = await page.$eval("#amount-input", el => el.value);
 
-  expect(text).toBe("12510.000");
+  expect(text).toBe("12,105");
 }, 30000);
 
 /**
@@ -38,7 +38,7 @@ test("Adding new currency state to the page", async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto("https://simple-exchange-rate.herokuapp.com/");
-  await page.waitForSelector("button#remove-btn-CAD", {
+  await page.waitForSelector("input#rate-input", {
     visible: true
   });
 
@@ -47,7 +47,7 @@ test("Adding new currency state to the page", async () => {
   expect(elementNotExist).toBeNull();
 
   await page.click("input#rate-input");
-  await page.type("input#rate-input", "idr");
+  await page.type("#rate-input", "idr");
   await page.click("button#add-submit");
 
   const elementExist = await page.$("#remove-btn-IDR");
