@@ -1,5 +1,5 @@
 # -simple-foreign-exchange-app
-App for compare 1 currency after another.
+App for compare 1 currency after another. The demo can be accessed here https://simple-exchange-rate.herokuapp.com/
 
 ## Setup
 Install dependencies by type:
