@@ -54,6 +54,7 @@ class AddRate extends React.PureComponent {
             list="currencies"
             onChange={this.handleChange}
             value={this.state.currencyInput}
+            id="rate-input"
           />
           <datalist id="currencies">
             {notShowedRates.map(rate => (

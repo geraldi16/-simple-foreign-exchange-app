@@ -22,7 +22,7 @@ const formatNumeric = amount => {
       dot++;
       preprocessedAmount += amountInArray[i];
     }
-    if (amountInArray[i] !== "." || amountInArray[i] !== ",") {
+    if (amountInArray[i] !== "." && amountInArray[i] !== ",") {
       preprocessedAmount += amountInArray[i];
     }
   }
