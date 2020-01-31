@@ -54,7 +54,7 @@ class InputAmount extends React.PureComponent {
   };
 
   render() {
-    const { amount, base, currencyList } = this.props;
+    const { base, currencyList } = this.props;
     return (
       <Style.Wrapper>
         <Style.CurrencyName xs={12}>{CURRENCY_NAME[base]}</Style.CurrencyName>
