@@ -14,7 +14,7 @@ const formatNumeric = amount => {
   let preprocessedAmount = "";
   // remove . to maximum one in amount
   let dot = 0;
-  const amountInArray = amount.split("");
+  const amountInArray = amount.replace(/,/g, "").split("");
 
   // check every char
   for (let i = 0; i < amountInArray.length; i++) {
@@ -22,7 +22,7 @@ const formatNumeric = amount => {
       dot++;
       preprocessedAmount += amountInArray[i];
     }
-    if (amountInArray[i] !== ".") {
+    if (amountInArray[i] !== "." || amountInArray[i] !== ",") {
       preprocessedAmount += amountInArray[i];
     }
   }
